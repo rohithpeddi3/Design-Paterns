@@ -1,0 +1,23 @@
+OBJECT POOL:
+Reuse and share objects that are expensive to create 
+
+Reusable- Wraps the limited resource,will be shared by many for a limited amount of time
+Client- uses an instance of type reusable
+ReusablePool- creating and managing a pool of ojects [Singleton object]
+
+Typical flow of operations:
+--> Request for a reusable object [by client to pool]
+--> If found return it else create a new one and return it 
+--> If unable to create a new one, wait until one is released
+
+Problems:
+> Limited number of resources in the pool
+> Handling situations when creating a new resource fails
+> Synchronization
+> Expired resources[unused but still reserved]
+
+Objects are to be marked available after they are released so that 
+pool can re use it accordingly 
+
+[PROVIDE A WAY FOR REUSE OF CREATED OBJECTS]
+
